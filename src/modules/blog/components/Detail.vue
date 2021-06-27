@@ -33,6 +33,12 @@
               :src="post.image"
               height="300px"
           />
+          <v-card-subtitle class="pt-0">
+            <v-list-item-content>
+              <v-list-item-title class="body-2">{{ post.user.email }}</v-list-item-title>
+              <v-list-item-subtitle class="caption">{{ moment(post.date).format('DD/MM/YYYY [a las] HH:mm')}}</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-card-subtitle>
           <v-card-text v-html="post.text"/>
         </v-card>
       </v-col>
