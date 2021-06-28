@@ -8,7 +8,7 @@ export default {
             path: 'blog',
             component: () => import('@/modules/blog/views/Blog'),
             meta: {
-                requiresAuth: true
+                requiresAuth: false
             }
         },
         {
@@ -17,7 +17,7 @@ export default {
             props: true,
             component: () => import('@/modules/blog/views/PostDetail'),
             meta: {
-                requiresAuth: true
+                requiresAuth: false
             }
         }
     ]

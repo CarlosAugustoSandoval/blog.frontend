@@ -1,5 +1,6 @@
 <template>
   <v-container fluid>
+    <loading v-model="loading"/>
     <v-row dense>
       <v-col
           cols="12"
@@ -18,11 +19,11 @@
                 rules="required"
                 rows="1"
             />
-            <c-text-area
+            <c-ckaeditor
+                style="width: 100% !important;"
                 v-model="post.text"
-                label="Contenido"
-                name="Contenido"
-                rules="required"
+                placeholder="Contenido"
+                mode="basic"
             />
             <v-row justify="center" class="my-4">
               <croppa
@@ -75,6 +76,7 @@ export default {
     }
   },
   data: () => ({
+    loading: false,
     show: false,
     base64Image: {},
     makePost: {

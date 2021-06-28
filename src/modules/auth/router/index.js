@@ -12,16 +12,16 @@ export default {
             }
         },
         {
-            name: 'ForgotPassword',
-            path: 'forgot-password',
-            component: () => import('@/modules/auth/views/ForgotPassword'),
+            name: 'Singup',
+            path: 'singup',
+            component: () => import('@/modules/auth/views/Singup'),
             meta: {
                 requiresAuth: false
             }
         },
         {
             name: 'Error',
-            path: 'error',
+            path: '*',
             component: () => import('@/modules/auth/views/Error'),
             meta: {
                 requiresAuth: false

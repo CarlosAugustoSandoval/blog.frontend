@@ -10,6 +10,7 @@ import CSelectComplete from '@/components/globalComponents/CSelectComplete'
 import CTextArea from '@/components/globalComponents/CTextArea'
 import CText from '@/components/globalComponents/CText'
 import CTooltip from '@/components/globalComponents/CTooltip'
+import CCkaeditor from '@/components/globalComponents/CCkaeditor'
 
 import MainMenu from '@/components/globalComponents/MainMenu'
 import Loading from '@/components/globalComponents/Loading'
@@ -27,6 +28,7 @@ Vue.use({
     Vue.component('CTextArea', CTextArea)
     Vue.component('CText', CText)
     Vue.component('CTooltip', CTooltip)
+    Vue.component('CCkaeditor', CCkaeditor)
 
     Vue.component('MainMenu', MainMenu)
     Vue.component('Loading', Loading)

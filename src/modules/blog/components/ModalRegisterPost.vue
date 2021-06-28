@@ -5,6 +5,7 @@
       hide-overlay
       transition="dialog-bottom-transition"
       persistent
+      :retain-focus="false"
   >
     <v-card flat tile>
       <v-btn

@@ -11,6 +11,7 @@ import './plugins/mixin'
 import './plugins/globalComponents'
 import './plugins/axios'
 import './plugins/croppa'
+import './plugins/ckEditor'
 
 Vue.config.productionTip = false
 store.commit('SET_DEFAULT_AXIOS')

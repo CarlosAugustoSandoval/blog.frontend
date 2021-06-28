@@ -8,7 +8,7 @@ export default {
             path: 'contact',
             component: () => import('@/modules/contact/views/Contact'),
             meta: {
-                requiresAuth: true
+                requiresAuth: false
             }
         }
     ]

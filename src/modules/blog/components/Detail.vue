@@ -12,20 +12,20 @@
               left
               top
               :to="{name: 'Blog'}"
-              style="z-index: 10"
           >
             <v-icon>mdi-arrow-left</v-icon>
-            Volver a los posts
+            Volver
           </v-btn>
           <v-card-title>
             {{post && post.title}}
             <v-btn
+                v-if="user"
                 icon
-                small
                 color="orange"
                 @click="$emit('edit')"
+                class="ml-1"
             >
-              <v-icon small>mdi-pencil</v-icon>
+              <v-icon>mdi-pencil</v-icon>
             </v-btn>
           </v-card-title>
           <v-img
@@ -39,7 +39,16 @@
               <v-list-item-subtitle class="caption">{{ moment(post.date).format('DD/MM/YYYY [a las] HH:mm')}}</v-list-item-subtitle>
             </v-list-item-content>
           </v-card-subtitle>
-          <v-card-text v-html="post.text"/>
+          <v-card-text class="content-post" v-html="post.text"/>
+          <v-btn
+              text
+              left
+              top
+              :to="{name: 'Blog'}"
+          >
+            <v-icon>mdi-arrow-left</v-icon>
+            Volver
+          </v-btn>
         </v-card>
       </v-col>
     </v-row>
@@ -57,6 +66,9 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+.content-post p{
+  margin: 0px !important;
+  margin-bottom: 4px !important;
+}
 </style>

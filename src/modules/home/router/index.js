@@ -8,7 +8,7 @@ export default {
             path: 'home',
             component: () => import('@/modules/home/views/Home'),
             meta: {
-                requiresAuth: true
+                requiresAuth: false
             }
         }
     ]

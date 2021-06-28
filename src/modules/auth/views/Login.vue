@@ -1,27 +1,7 @@
 <template>
   <v-row class="ma-0">
     <loading :value="loading"/>
-    <v-col cols="12" md="6" lg="7" xl="8" class="primary d-none d-md-flex align-center justify-center">
-      <v-container>
-        <div class="pa-10">
-          <v-row justify="center">
-            <v-col cols="8" xl="6">
-              <div>
-                <h2
-                    class="display-1 white--text font-weight-medium"
-                >El mejor blog para ti y tu familia.</h2>
-                <h6
-                    class="subtitle-1 mt-4 white--text op-5 font-weight-regular"
-                >
-                  Escribe lo que te apasiona siempre a tu manera, atractivo, original, fácil y gratuito.
-                </h6>
-                <v-btn class="mt-4 text-capitalize" x-large outlined color="white">Leer más</v-btn>
-              </div>
-            </v-col>
-          </v-row>
-        </div>
-      </v-container>
-    </v-col>
+    <caption-auth/>
     <v-col cols="12" md="6" lg="5" xl="4" class="d-flex align-center py-0">
       <v-container fluid class="py-0">
         <div class="px-10 py-0">
@@ -59,12 +39,12 @@
                 </v-btn>
 
                 <v-btn
-                    :disabled="invalid"
                     color="warning"
                     block
                     class="mt-4"
                     submit
                     type="button"
+                    :to="{ name: 'Singup' }"
                 >
                   Registrarse
                 </v-btn>
@@ -78,8 +58,10 @@
 </template>
 
 <script>
+import CaptionAuth from '@/modules/auth/components/CaptionAuth'
 export default {
   name: 'Login',
+  components: {CaptionAuth},
   data: () => ({
     email: null,
     password: null,
@@ -90,7 +72,6 @@ export default {
       this.$refs.formLogin.validate().then(result => {
         if (result) {
           this.loading = true
-          console.log('entraaa')
           this.$store.dispatch('login', {username: this.email, password: this.password})
               .then(resolve => {
                 if (resolve) this.$router.push({name: 'Home'})

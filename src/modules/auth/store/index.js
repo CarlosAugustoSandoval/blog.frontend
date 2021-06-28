@@ -4,7 +4,7 @@ const state = {
     access_token: null,
     token_type: 'Bearer',
     user: null,
-    blog_selected: null,
+    blog_selected: 1,
     server: 'http://localhost:8000/api'
 }
 
@@ -39,6 +39,7 @@ const actions = {
         return await new Promise(resolve => {
             Vue.axios.get('userin')
                 .then(responseUser => {
+                    console.log('responseUser', responseUser)
                     context.commit('SET_USER', responseUser.data)
                     resolve(true)
                 })
